@@ -14,7 +14,6 @@ refs.input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 function onSearch(e) {
   const name = e.target.value.trim();
-  console.log(name);
 
   if (!name) {
     refs.card.innerHTML = '';
@@ -43,12 +42,18 @@ function renderCountryCard(countries) {
   const cardMarkup = `
         <div class="card">
           <div class="card__box">
-            <img class="card__img" src="${flags.svg}" alt="${name}" width="30"></img>
-            <span class="card__text">${name}</span>
+            <img class="card__img" src="${
+              flags.svg
+            }" alt="${name}" width="30"></img>
+            <span class="card__text">${
+              name !== 'Russian Federation' ? name : 'Terrorist state'
+            }</span>
           </div>
           <ul class="list">
             <li class="list__item">
-              <p class="list__text">Capital: <span class="list__subtext">${capital}</span></p>
+              <p class="list__text">Capital: <span class="list__subtext">${
+                capital !== 'Moscow' ? capital : 'Оркостан'
+              }</span></p>
             </li>
             <li class="list__item">
               <p class="list__text">Population: <span class="list__subtext">${population}</span></p>
