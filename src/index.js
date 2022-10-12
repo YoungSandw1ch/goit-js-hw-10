@@ -16,23 +16,28 @@ function onSearch(e) {
   const name = e.target.value.trim();
 
   if (!name) {
-    refs.card.innerHTML = '';
-    refs.list.innerHTML = '';
+    cleanHtml();
     return;
   }
 
-  fetchCountries(name).then(countries => {
-    if (countries.length > 10) {
-      notifyInfo();
-      return;
-    }
+  fetchCountries(name)
+    .then(countries => {
+      if (countries.length > 10) {
+        cleanHtml();
+        notifyInfo();
+        return;
+      }
 
-    renderCountryList(countries);
+      renderCountryList(countries);
 
-    if (countries.length === 1) {
-      renderCountryCard(countries);
-    }
-  });
+      if (countries.length === 1) {
+        renderCountryCard(countries);
+      }
+    })
+    .catch(error => {
+      cleanHtml();
+      notifyFailure();
+    });
 }
 
 function renderCountryCard(countries) {
@@ -81,6 +86,11 @@ function renderCountryList(countries) {
 
   refs.list.innerHTML = listMarkup;
   refs.card.innerHTML = '';
+}
+
+function cleanHtml() {
+  refs.card.innerHTML = '';
+  refs.list.innerHTML = '';
 }
 
 //==========notify=============================================
