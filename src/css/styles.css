@@ -40,6 +40,9 @@ body {
   border-radius: 3px;
 
   background-color: rgb(253, 253, 253);
+
+  display: flex;
+  align-items: center;
 }
 
 .country-list__item:not(:last-child) {
