@@ -17,6 +17,8 @@ function onSearch(e) {
   console.log(name);
 
   if (!name) {
+    refs.card.innerHTML = '';
+    refs.list.innerHTML = '';
     return;
   }
 
@@ -38,9 +40,11 @@ function renderCountryCard(countries) {
   const { name, flags, population, capital, languages } = countries[0];
   const languagesName = languages.map(language => language.name).join(', ');
 
-  const cardMarkup = `<div class="country-info__box">
-            <img class="country-info__img" src="${flags.svg}" alt="${name}" width="30"></img>
-            <span class="country-info__text">${name}</span>
+  const cardMarkup = `
+        <div class="card">
+          <div class="card__box">
+            <img class="card__img" src="${flags.svg}" alt="${name}" width="30"></img>
+            <span class="card__text">${name}</span>
           </div>
           <ul class="list">
             <li class="list__item">
@@ -50,9 +54,10 @@ function renderCountryCard(countries) {
               <p class="list__text">Population: <span class="list__subtext">${population}</span></p>
             </li>
             <li class="list__item">
-              <p class="list__text">Languages:<span class="list__subtext">${languagesName}</span></p>
+              <p class="list__text">Languages: <span class="list__subtext">${languagesName}</span></p>
             </li>
-          </ul>`;
+          </ul>
+        </div>`;
 
   refs.list.innerHTML = '';
   refs.card.innerHTML = cardMarkup;
