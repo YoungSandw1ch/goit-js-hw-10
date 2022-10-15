@@ -6,17 +6,55 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../../node_modules/modern-normalize/modern-normalize.css">
+  <script>
+    window.global = window;
+    var parcelRequire;
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=PT+Sans+Caption&display=swap"
+    rel="stylesheet">
   <title>Async search countries</title>
 </head>
 
 <body>
-  <a href="../index.html">Back</a>
+  <a class="link" href="../index.html">Back</a>
 
-  <input type="text" id="search-box" />
-  <ul class="country-list"></ul>
-  <div class="country-info"></div>
+  <section class="countries">
+    <div class="container">
+      <div class="wrapper">
+        <h1 class="countries__title">Countries searcher</h1>
+        <input class="countries__input" type="text" id="search-box" name="search" />
+        <label class="countries__label" for="search-box">start typing the country name</label>
+      </div>
 
-  <script src="../js/02-async-search-countries.js" type="module"></script>
+      <ul class="country-list"></ul>
+
+      <div class="country-info">
+        <div class="card">
+          <h2 class="card__title">CANADA</h2>
+          <img src="" alt="" class="card__img">
+
+          <ul class="stats">
+            <li class="stats__item">
+              <p class="stats__text">STATS: <span class="stats__subtext">10000</span></p>
+            </li>
+            <li class="stats__item">
+              <p class="stats__text">STATS: <span class="stats__subtext">10000</span></p>
+            </li>
+            <li class="stats__item">
+              <p class="stats__text">STATS: <span class="stats__subtext">10000</span></p>
+            </li>
+          </ul>
+        </div>
+        <div class="slider">
+          <p>test</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/02-async-search-countries.js"></script>
 </body>
 
 </html>

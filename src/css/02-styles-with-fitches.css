@@ -10,18 +10,144 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"><circle r="2" fill="%23888" /></svg>');
-  background-position: left 10px top 10px;
-  background-repeat: repeat;
+  background-image: url(../images/flagsBg.jpeg);
+  background-size: cover;
+  min-height: 100vh;
 }
 
-#search-box {
-  font: inherit;
-  padding: 8px;
-  max-width: 320px;
-  margin: 16px;
+ul,
+ol {
+  padding: 0;
+  margin: 0;
 }
 
+/* 
+  font-family: 'Fredoka One', cursive;
+  font-family: 'PT Sans Caption', sans-serif; 
+*/
+
+.link {
+  font-size: 30px;
+  color: #2a2a2a;
+  background-color: rgba(255, 255, 255, 0.799);
+  border-radius: 10px;
+}
+
+.container {
+  width: 1030px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.countries {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  background-color: rgba(255, 255, 255, 0.799);
+  border-radius: 50px;
+
+  color: #178ac4;
+  font-family: 'Fredoka One', cursive;
+  text-shadow: 1px 1px black;
+
+  margin-bottom: 30px;
+}
+
+.countries__title {
+  font-weight: 700;
+  font-size: 45px;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  margin: 0;
+}
+
+.countries__input {
+  display: block;
+  width: 90%;
+  height: 50px;
+
+  padding: 0 50px;
+  margin: 0 auto;
+
+  text-align: center;
+  font-size: 20px;
+
+  border: 1px solid #178ac4;
+  border-radius: 10px;
+}
+
+.countries__label {
+  font-size: 25px;
+
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.country-list {
+  list-style: none;
+
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: -10px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.country-list__item {
+  flex-basis: calc((100% - 20px * 2) / 2);
+  height: 80px;
+  margin: 10px;
+
+  background-color: #fff;
+  border-radius: 10px;
+  border: 2px solid #178ac4;
+
+  box-shadow: 3px 3px 4px #2a2a2a;
+
+  display: flex;
+  align-items: center;
+}
+
+.country-list__img {
+  margin-right: 10px;
+}
+
+.country-list__text {
+}
+
+.country-info {
+  display: flex;
+}
+
+.card {
+  width: 40%;
+}
+
+.card__title {
+}
+.card__img {
+}
+.stats {
+}
+.stats__item {
+}
+.stats__text {
+}
+.stats__subtext {
+}
+
+.slider {
+  width: 60%;
+}
+
+/* 
 .country-list {
   list-style: none;
 
@@ -100,4 +226,4 @@ body {
 
 .list__subtext {
   font-weight: 400;
-}
+} */

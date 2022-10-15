@@ -11,8 +11,10 @@ refs.input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 // console.log(refs);
 // console.log(notifyInfo);
-console.log(fetchFlags);
-fetchFlags('canada').then(console.log);
+
+// console.log(fetchFlags);
+// fetchFlags('canada').then(console.log);
+
 //   .then(data => {
 //   const url = data.results[0].urls.raw;
 
