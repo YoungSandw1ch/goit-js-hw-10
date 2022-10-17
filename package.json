@@ -5,7 +5,9 @@
   "homepage": "https://YoungSandw1ch.github.io/goit-js-hw-10",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-10/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-10/html/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,7 @@
     "url": "https://github.com/YoungSandw1ch/goit-js-hw-10/issues"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "lodash.debounce": "^4.0.8",
     "notiflix": "^3.2.5",
     "simplelightbox": "^2.10.4"
