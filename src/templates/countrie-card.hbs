@@ -1,24 +1,31 @@
-<div class='box'>
-  <div class='card'>
-    <h2 class='card__title'>CANADA</h2>
-    <img src='' alt='' class='card__img' />
+{{#each this}}
+  <div class='box'>
+    <div class='card'>
+      <h2 class='card__title'>{{name}}</h2>
+      <img src='{{flags.svg}}' alt='{{name}}' class='card__img' />
 
-    <ul class='stats'>
-      <li class='stats__item'>
-        <p class='stats__text'>STATS:
-          <span class='stats__subtext'>10000</span></p>
-      </li>
-      <li class='stats__item'>
-        <p class='stats__text'>STATS:
-          <span class='stats__subtext'>10000</span></p>
-      </li>
-      <li class='stats__item'>
-        <p class='stats__text'>STATS:
-          <span class='stats__subtext'>10000</span></p>
-      </li>
-    </ul>
+      <ul class='stats'>
+        <li class='stats__item'>
+          <p class='stats__text'>CAPITAL:
+            <span class='stats__subtext'>{{capital}}</span></p>
+        </li>
+        <li class='stats__item'>
+          <p class='stats__text'>Population:
+            <span class='stats__subtext'>{{population}}</span></p>
+        </li>
+        <li class='stats__item'>
+          <p class='stats__text'>STATS:
+            {{#each languages}}
+              <span class='stats__subtext'>{{name}}</span>
+            {{/each}}
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class='gallery'>
+      <div class='lds-spinner is-hide'><div></div><div></div><div></div><div
+        ></div><div></div><div></div><div></div><div></div><div></div><div
+        ></div><div></div><div></div></div>
+    </div>
   </div>
-  <div class='slider'>
-    <img class='slider__img' src='' alt='' />
-  </div>
-</div>
+{{/each}}

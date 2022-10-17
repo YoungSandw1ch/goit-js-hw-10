@@ -19,7 +19,8 @@ ul,
 ol,
 h1,
 h2,
-h3 {
+h3,
+p {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -29,6 +30,10 @@ h3 {
   font-family: 'Fredoka One', cursive;
   font-family: 'PT Sans Caption', sans-serif; 
 */
+
+.is-hide {
+  display: none;
+}
 
 .link {
   font-size: 30px;
@@ -108,6 +113,7 @@ h3 {
   flex-basis: calc((100% - 20px * 2) / 2);
   height: 80px;
   margin: 10px;
+  padding: 0 15px;
 
   background-color: #fff;
   border-radius: 10px;
@@ -121,9 +127,12 @@ h3 {
 
 .country-list__img {
   margin-right: 10px;
+  width: 73px;
 }
 
 .country-list__text {
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
 }
 
 .country-info {
@@ -133,12 +142,12 @@ h3 {
   display: flex;
   border: 2px solid #178ac4;
   border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.799);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .card {
   width: 40%;
-  padding: 10px;
+  padding: 20px 10px;
 
   font-family: 'PT Sans Caption', sans-serif;
 }
@@ -162,7 +171,7 @@ h3 {
 }
 
 .stats {
-  padding-left: 50px;
+  padding-left: 16px;
 }
 
 .stats__item {
@@ -173,21 +182,24 @@ h3 {
 }
 
 .stats__text {
-  font-size: 25px;
+  font-size: 19px;
   font-weight: 600;
-  text-transform: uppercase;
 }
 
 .stats__subtext {
-  font-size: 25px;
   font-weight: normal;
+  font-size: 18px;
 }
 
-.slider {
+.stats__subtext:not(:last-child) {
+  margin-right: 3px;
+}
+
+.gallery {
   width: 60%;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .slider__img {

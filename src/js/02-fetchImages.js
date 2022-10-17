@@ -15,12 +15,12 @@
 
 const BASE_URL = 'https://pixabay.com/api';
 const API_KEY = '25718154-32288cdf6837b8e29b2d2c309';
-const SEARCH_PARAMS = '+national+flags';
-const SEARCH_DETAILS = '&image_type=photo&orientation=horizontal&per_page=5';
+// const SEARCH_PARAMS = '+national+flags';
+const SEARCH_DETAILS = '&image_type=photo&orientation=horizontal&per_page=6';
 
-export default async function fetchCoutriesImg(countrieName) {
+export default async function fetchCoutriesImg(countrieName, capital) {
   const data = await fetch(
-    `${BASE_URL}/?key=${API_KEY}&q=${countrieName}${SEARCH_PARAMS}${SEARCH_DETAILS}`
+    `${BASE_URL}/?key=${API_KEY}&q=${countrieName}+${capital}${SEARCH_DETAILS}`
   );
   const response = await data.json();
   return await response.hits;
