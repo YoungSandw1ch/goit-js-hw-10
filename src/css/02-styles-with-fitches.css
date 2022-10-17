@@ -127,6 +127,9 @@ h3 {
 }
 
 .country-info {
+}
+
+.box {
   display: flex;
   border: 2px solid #178ac4;
   border-radius: 30px;
