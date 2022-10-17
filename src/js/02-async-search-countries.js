@@ -28,29 +28,35 @@ function onSearch(e) {
     return;
   }
 
-  fetchCoutries(searchQuery).then(countries => {
-    if (countries.length > 10) {
+  fetchCoutries(searchQuery)
+    .then(countries => {
+      if (countries.length > 10) {
+        clearCountriesList();
+        notifyInfo();
+        return;
+      }
+
+      createAndRenderItems(countries);
+      clearCountriesCard();
+
+      if (countries.length === 1) {
+        clearCountriesList();
+        createAndRenderCard(countries);
+        toogleSpinner();
+
+        const { name, capital, nativeName } = countries[0];
+        fetchCoutriesImg(name, nativeName, capital)
+          .then(createAndRenderGallery)
+          .then(createLightbox)
+          .finally(toogleSpinner);
+        return;
+      }
+    })
+    .catch(() => {
+      notifyFailure();
+      clearCountriesCard();
       clearCountriesList();
-      notifyInfo();
-      return;
-    }
-
-    createAndRenderItems(countries);
-    clearCountriesCard();
-
-    if (countries.length === 1) {
-      clearCountriesList();
-      createAndRenderCard(countries);
-      toogleSpinner();
-
-      const { name, capital } = countries[0];
-      fetchCoutriesImg(name, capital)
-        .then(createAndRenderGallery)
-        .then(createLightbox)
-        .finally(toogleSpinner);
-      return;
-    }
-  });
+    });
 }
 
 function createAndRenderItems(countries) {
