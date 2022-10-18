@@ -14,13 +14,40 @@ import fetchCoutriesImg from './02-fetchImages';
 
 const DEBOUNCE_DELAY = 300;
 const refs = getRefs();
+let searchQuery = '';
 
 refs.input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY), {
   passive: false,
 });
 
+//====добавляет возможность выбрать страну нажатием на ее в списке стран======
+//====жена "тестеровщик" сказала что ей так удобно============================
+refs.list.addEventListener('click', onItemClick);
+console.log(
+  `%cВыбирать страну можно нажатием на нее в списке стран`,
+  'color: green; font-size: 17px'
+);
+
+async function onItemClick(e) {
+  if (e.target === e.currentTarget) return;
+  const item = e.target.closest('li');
+  searchQuery = item.dataset.name;
+
+  const countries = await fetchCoutries(searchQuery);
+  countries.splice(1, 1); //фикс рендера таких стран как Судан и Южный Судан
+  clearCountriesList();
+  createAndRenderCard(countries);
+  toogleSpinner();
+
+  const { name, capital, nativeName } = countries[0];
+  const data = await fetchCoutriesImg(name, nativeName, capital);
+  createAndRenderGallery(data);
+  createLightbox();
+  toogleSpinner();
+}
+//=============================================================================
 function onSearch(e) {
-  const searchQuery = e.target.value;
+  searchQuery = e.target.value;
   if (!searchQuery) {
     notifyWarning();
     clearCountriesCard();
@@ -32,6 +59,7 @@ function onSearch(e) {
     .then(countries => {
       if (countries.length > 10) {
         clearCountriesList();
+        clearCountriesCard();
         notifyInfo();
         return;
       }

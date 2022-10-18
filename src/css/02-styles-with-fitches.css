@@ -127,6 +127,11 @@ p {
   align-items: center;
 }
 
+.country-list__item:hover {
+  background-color: #178ac4;
+  cursor: pointer;
+}
+
 .country-list__img {
   margin-right: 10px;
   width: 73px;
